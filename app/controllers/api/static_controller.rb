@@ -1,6 +1,6 @@
 class Api::StaticController < ApplicationController
 
     def api_test
-      render json: {dataHere: 'working!! YO!!!'}
+      render json: {dataHere: 'Operating'}
     end
 end

@@ -1,29 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-import { Switch, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import {Container} from 'semantic-ui-react'
+import React, { Fragment, } from 'react';
 import NavBar from './components/NavBar';
-import About from './pages/About';
-import { PRIMARY_COLOR } from './styles';
-import ComponentDemo from './pages/ComponentDemo';
+import Home from './components/Home';
+import NoMatch from './components/NoMatch';
+import Login from './components/Login';
+import Register from './components/Register';
+import { Switch, Route, } from 'react-router-dom';
+import { Container, } from "semantic-ui-react";
 
-function App() {
-
-  return (
-    <>
+const App = () => (
+  <Fragment>
     <NavBar />
-    <h1 style={{color: PRIMARY_COLOR }}>sdf</h1>
     <Container>
       <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/about' component={About} />
-        <Route exact path='/componentDemo' component={ComponentDemo} />
-        
+        <Route exact path="/" component={Home} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
+        <Route component={NoMatch} />
       </Switch>
-      </Container>
-   </>
-  );
-}
+    </Container>
+  </Fragment>
+)
 
 export default App;
